@@ -51,7 +51,7 @@ export default defineComponent({
 </script>
 <style scoped>
 .logo {
-  border-radius: 100px;
+  border-radius: 140px;
 }
 h1 {
   text-align: center;
