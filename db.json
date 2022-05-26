@@ -1,8 +1,16 @@
 {
-    "projetos": [
-        {
-            "id": 1,
-            "nome": "Jamal Tracker 2.0"
-        }
-    ]
+  "projetos": [
+    {
+      "nome": "Jamal Tracker",
+      "id": 1
+    },
+    {
+      "nome": "React JS",
+      "id": 2
+    },
+    {
+      "nome": "React Native",
+      "id": 3
+    }
+  ]
 }
