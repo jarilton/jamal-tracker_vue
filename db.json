@@ -19,9 +19,27 @@
       "duracaoEmSegundos": 65,
       "descricao": "Desenvolvimento de software",
       "projeto": {
-        "id" : 1,
+        "id": 1,
         "nome": "Jamal Tracker"
       }
+    },
+    {
+      "duracaoEmSegundos": 4,
+      "descricao": "Ajustes do app",
+      "projeto": {
+        "nome": "React Native",
+        "id": 3
+      },
+      "id": 2
+    },
+    {
+      "duracaoEmSegundos": 17,
+      "descricao": "Testes unitário",
+      "projeto": {
+        "nome": "React JS",
+        "id": 2
+      },
+      "id": 3
     }
   ]
 }
