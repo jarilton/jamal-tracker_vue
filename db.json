@@ -12,5 +12,16 @@
       "nome": "React Native",
       "id": 3
     }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "duracaoEmSegundos": 65,
+      "descricao": "Desenvolvimento de software",
+      "projeto": {
+        "id" : 1,
+        "nome": "Jamal Tracker"
+      }
+    }
   ]
 }
