@@ -17,7 +17,7 @@
     {
       "id": 1,
       "duracaoEmSegundos": 65,
-      "descricao": "Desenvolvimento de software",
+      "descricao": "Software Jamal Tracker",
       "projeto": {
         "id": 1,
         "nome": "Jamal Tracker"

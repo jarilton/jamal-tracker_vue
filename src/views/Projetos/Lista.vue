@@ -41,18 +41,18 @@
 <script lang="ts">
 import { useStore } from "@/store";
 import { computed, defineComponent } from "vue";
-import { OBTER_PROJETOS, REMOVER_PROJETOS } from "@/store/tipo-acoes";
+import { OBTER_PROJETO, REMOVER_PROJETO } from "@/store/tipo-acoes";
 
 export default defineComponent({
   name: "Lista",
   methods: {
     excluir (id: string) {
-      this.store.dispatch(REMOVER_PROJETOS, id)
+      this.store.dispatch(REMOVER_PROJETO, id)
     }
   },
   setup () {
     const store = useStore()
-    store.dispatch(OBTER_PROJETOS)
+    store.dispatch(OBTER_PROJETO)
     return {
       projetos: computed(() => store.state.projetos),
       store
