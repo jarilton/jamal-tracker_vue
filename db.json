@@ -9,8 +9,12 @@
       "id": 2
     },
     {
-      "nome": "React Native",
-      "id": 3
+      "id": 3,
+      "nome": "teste unitário"
+    },
+    {
+      "id": 4,
+      "nome": "Vue Js"
     }
   ],
   "tarefas": [
@@ -25,7 +29,7 @@
     },
     {
       "duracaoEmSegundos": 4,
-      "descricao": "Ajustes do app",
+      "descricao": "Desenvolvimento do novo app",
       "projeto": {
         "nome": "React Native",
         "id": 3
@@ -34,7 +38,7 @@
     },
     {
       "duracaoEmSegundos": 17,
-      "descricao": "Testes unitário",
+      "descricao": "Teste unitário",
       "projeto": {
         "nome": "React JS",
         "id": 2
