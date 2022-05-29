@@ -23,6 +23,10 @@
     {
       "nome": "Estudos",
       "id": 6
+    },
+    {
+      "nome": "Foco total",
+      "id": 7
     }
   ],
   "tarefas": [
@@ -70,6 +74,15 @@
         "id": 6
       },
       "id": 5
+    },
+    {
+      "duracaoEmSegundos": 4,
+      "descricao": "Estudando vuex",
+      "projeto": {
+        "nome": "Foco total",
+        "id": 7
+      },
+      "id": 6
     }
   ]
 }
