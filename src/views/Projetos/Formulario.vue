@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { useStore } from "@/store";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import { TipoNotificacao } from "@/interfaces/INotificacao";
 import useNotificador from "@/hooks/notificador";
 import { ALTERAR_PROJETO, CADASTRAR_PROJETO } from "@/store/tipo-acoes";
@@ -26,7 +26,7 @@ export default defineComponent({
       type: String,
     },
   },
-  mounted() {
+  /*   mounted() {
     if (this.id) {
       const projeto = this.store.state.projeto.projetos.find((proj) => proj.id == this.id);
       this.nomeDoProjeto = projeto?.nome || "";
@@ -36,17 +36,19 @@ export default defineComponent({
     return {
       nomeDoProjeto: "",
     };
-  },
+  }, */
   methods: {
     salvar() {
       if (this.id) {
-        this.store.dispatch(ALTERAR_PROJETO, {
-          id: this.id,
-          nome: this.nomeDoProjeto,
-        })
+        this.store
+          .dispatch(ALTERAR_PROJETO, {
+            id: this.id,
+            nome: this.nomeDoProjeto,
+          })
           .then(() => this.lidarComSucesso());
       } else {
-        this.store.dispatch(CADASTRAR_PROJETO, this.nomeDoProjeto)
+        this.store
+          .dispatch(CADASTRAR_PROJETO, this.nomeDoProjeto)
           .then(() => this.lidarComSucesso());
       }
     },
@@ -60,12 +62,23 @@ export default defineComponent({
       this.$router.push("/projetos");
     },
   },
-  setup() {
+  setup(props) {
     const store = useStore();
     const { notificar } = useNotificador();
+
+    const nomeDoProjeto = ref("")
+
+    if (props.id) {
+      const projeto = store.state.projeto.projetos.find(
+        (proj) => proj.id == props.id
+      );
+      nomeDoProjeto.value = projeto?.nome || "";
+    }
+
     return {
       store,
       notificar,
+      nomeDoProjeto
     };
   },
 });

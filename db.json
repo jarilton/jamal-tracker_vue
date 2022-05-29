@@ -14,7 +14,11 @@
     },
     {
       "id": 4,
-      "nome": "Vue Js"
+      "nome": "Vue Js 3.0"
+    },
+    {
+      "nome": "Flutter",
+      "id": 5
     }
   ],
   "tarefas": [
@@ -44,6 +48,15 @@
         "id": 2
       },
       "id": 3
+    },
+    {
+      "duracaoEmSegundos": 4,
+      "descricao": "SAP",
+      "projeto": {
+        "nome": "Flutter",
+        "id": 5
+      },
+      "id": 4
     }
   ]
 }
