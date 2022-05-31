@@ -50,7 +50,7 @@
     },
     {
       "duracaoEmSegundos": 17,
-      "descricao": "Teste unitário",
+      "descricao": "Teste unitário 2",
       "projeto": {
         "nome": "React JS",
         "id": 2

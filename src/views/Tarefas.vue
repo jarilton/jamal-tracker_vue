@@ -2,7 +2,8 @@
   <Formulario @aoSalvarTarefa="salvarTarefa" />
   <div class="lista">
     <Box v-if="semTarefas">
-      Você não está muito produtivo hoje <span class="has-text-weight-bold">:(</span>
+      Você não está muito produtivo hoje
+      <span class="has-text-weight-bold">:(</span>
     </Box>
     <div class="field">
       <p class="control has-icons-left">
@@ -26,35 +27,30 @@
       :key="index"
       @aoTarefaClicada="selecionarTarefa"
     />
-    <div
-      class="modal"
-      :class="{ 'is-active': tarefaSelecionada }"
-      v-if="tarefaSelecionada"
-    >
-      <div @click="fecharModal" class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">Editando tarefa</p>
-          <button @click="fecharModal" class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <div class="field">
-            <label for="descricaoDaTarefa" class="label"> Descrição da tarefa </label>
-            <input
-              type="text"
-              class="input"
-              v-model="tarefaSelecionada.descricao"
-              id="descricaoDaTarefa"
-            />
-          </div>
-        </section>
-        <footer class="modal-card-foot">
-          <button @click="alterarTarefa" class="button is-success">Salvar</button>
-          <button @click="fecharModal" class="button">Cancelar</button>
-        </footer>
-      </div>
-    </div>
-  </div>
+    <Modal :mostrar="tarefaSelecionada != null">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Editando tarefa</p>
+        <button @click="fecharModal" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="field">
+          <label for="descricaoDaTarefa" class="label">
+            Descrição da tarefa
+          </label>
+          <input
+            type="text"
+            class="input"
+            v-model="tarefaSelecionada.descricao"
+            id="descricaoDaTarefa"
+          />
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button @click="alterarTarefa" class="button is-success">Salvar</button>
+        <button @click="fecharModal" class="button">Cancelar</button>
+      </footer>
+    </Modal>
+  </div>r
 </template>
 
 <script lang="ts">
@@ -62,6 +58,7 @@ import { computed, defineComponent, ref, watchEffect } from "vue";
 import Formulario from "../components/Formulario.vue";
 import Tarefa from "../components/Tarefa.vue";
 import Box from "../components/Box.vue";
+import Modal from "../components/Modal.vue";
 import { useStore } from "@/store";
 import {
   ALTERAR_TAREFA,
@@ -77,6 +74,7 @@ export default defineComponent({
     Formulario,
     Tarefa,
     Box,
+    Modal
   },
   data() {
     return {
@@ -111,7 +109,7 @@ export default defineComponent({
 
     const filtro = ref("");
 
-/*     const tarefas = computed(() =>
+    /*     const tarefas = computed(() =>
       store.state.tarefa.tarefas.filter(
         (t) => !filtro.value || t.descricao.includes(filtro.value)
       )
@@ -119,7 +117,7 @@ export default defineComponent({
 
     watchEffect(() => {
       store.dispatch(OBTER_TAREFA, filtro.value);
-    })
+    });
 
     return {
       tarefas: computed(() => store.state.tarefa.tarefas),

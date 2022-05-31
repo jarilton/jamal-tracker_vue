@@ -60,7 +60,7 @@ strong {
   color: #f95738;
 }
 header {
-  background: #0d3b66;
+  background: #800000;
   width: 100%;
   height: 100%;
   padding: 2rem;
